@@ -4,8 +4,6 @@ package task1;
  * Created by EE on 02.10.2017.
  */
 
-
-
 public class Main {
 
     // Euclid’s algorithm with %
