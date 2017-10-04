@@ -4,7 +4,10 @@ package task6;
  * Created by EE on 04.10.2017.
  */
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class Main {
 
