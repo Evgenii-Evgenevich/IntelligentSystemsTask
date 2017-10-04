@@ -6,6 +6,7 @@ package task4;
 
 import java.io.InputStream;
 import java.util.Scanner;
+import java.util.function.Supplier;
 import java.util.stream.Stream;
 
 public class StreamOfLinesScanner {
@@ -14,5 +15,13 @@ public class StreamOfLinesScanner {
 
     public StreamOfLinesScanner(InputStream inputStream) {
         this.scanner = new Scanner(inputStream);
+    }
+
+    private Supplier<String> supplier = () -> {
+        return this.scanner.nextLine();
+    };
+
+    public Stream<String> stream() {
+        return Stream.generate(this.supplier);
     }
 }

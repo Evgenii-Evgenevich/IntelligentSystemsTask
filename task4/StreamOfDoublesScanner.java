@@ -6,6 +6,7 @@ package task4;
 
 import java.io.InputStream;
 import java.util.Scanner;
+import java.util.function.DoubleSupplier;
 import java.util.stream.DoubleStream;
 
 public class StreamOfDoublesScanner {
@@ -14,5 +15,13 @@ public class StreamOfDoublesScanner {
 
     public StreamOfDoublesScanner(InputStream inputStream) {
         this.scanner = new Scanner(inputStream);
+    }
+
+    private DoubleSupplier supplier = () -> {
+        return this.scanner.nextDouble();
+    };
+
+    public DoubleStream stream() {
+        return DoubleStream.generate(this.supplier);
     }
 }

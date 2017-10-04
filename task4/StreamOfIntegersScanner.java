@@ -6,6 +6,7 @@ package task4;
 
 import java.io.InputStream;
 import java.util.Scanner;
+import java.util.function.IntSupplier;
 import java.util.stream.IntStream;
 
 public class StreamOfIntegersScanner {
@@ -14,5 +15,13 @@ public class StreamOfIntegersScanner {
 
     public StreamOfIntegersScanner(InputStream inputStream) {
         this.scanner = new Scanner(inputStream);
+    }
+
+    private IntSupplier supplier = () -> {
+        return this.scanner.nextInt();
+    };
+
+    public IntStream stream() {
+        return IntStream.generate(this.supplier);
     }
 }
