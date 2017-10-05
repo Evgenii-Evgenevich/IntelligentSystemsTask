@@ -9,7 +9,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Spliterator;
 import java.util.Spliterators;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
@@ -28,7 +27,7 @@ public class Main {
 
             @Override
             public boolean hasNext() {
-                return (firstIterator.hasNext() || !this.nowfirst) && secondIterator.hasNext();
+                return this.nowfirst ? firstIterator.hasNext() : secondIterator.hasNext();
             }
 
             @Override
