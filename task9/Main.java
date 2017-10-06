@@ -1,8 +1,8 @@
-package task9;
-
 /**
  * Created by EE on 05.10.2017.
  */
+
+package task9;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -15,6 +15,7 @@ import java.util.stream.StreamSupport;
 
 public class Main {
 
+    // alternate elements from the streams first and second and stopping when one of them runs out of elements
     public static <T> Stream<T> zip(Stream<T> first, Stream<T> second) {
         Spliterator<T> firstSpliterator = first.spliterator();
         Spliterator<T> secondSpliterator = second.spliterator();

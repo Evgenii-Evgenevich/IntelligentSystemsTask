@@ -1,8 +1,8 @@
-package task8;
-
 /**
  * Created by EE on 04.10.2017.
  */
+
+package task8;
 
 import java.util.stream.Stream;
 

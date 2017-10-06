@@ -1,8 +1,8 @@
-package task6;
-
 /**
  * Created by EE on 04.10.2017.
  */
+
+package task6;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -11,6 +11,7 @@ import java.io.InputStreamReader;
 
 public class Main {
 
+    // count the number of times a particular character
     public static int countChars(InputStreamReader reader, char c) throws IOException {
         int count = 0;
 

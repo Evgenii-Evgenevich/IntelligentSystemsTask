@@ -1,8 +1,8 @@
-package task5;
-
 /**
  * Created by EE on 04.10.2017.
  */
+
+package task5;
 
 import java.io.IOException;
 import java.nio.file.Files;

@@ -1,8 +1,8 @@
-package task4;
-
 /**
  * Created by EE on 03.10.2017.
  */
+
+package task4;
 
 import java.io.InputStream;
 import java.util.Scanner;

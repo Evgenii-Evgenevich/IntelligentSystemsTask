@@ -1,8 +1,8 @@
-package task7;
-
 /**
  * Created by EE on 04.10.2017.
  */
+
+package task7;
 
 import java.io.File;
 import java.io.IOException;

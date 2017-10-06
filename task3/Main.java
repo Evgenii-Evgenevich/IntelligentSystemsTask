@@ -1,8 +1,8 @@
-package task3;
-
 /**
  * Created by EE on 03.10.2017.
  */
+
+package task3;
 
 import java.util.Scanner;
 

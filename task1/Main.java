@@ -1,8 +1,8 @@
-package task1;
-
 /**
  * Created by EE on 02.10.2017.
  */
+
+package task1;
 
 public class Main {
 
