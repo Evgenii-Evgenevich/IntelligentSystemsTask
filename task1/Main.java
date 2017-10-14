@@ -32,14 +32,28 @@ public class Main {
         return a | b;
     }
 
-    // Euclid’s algorithm with a rem function that produces the mathematical (non-negative) remainder
+    // produce the mathematical (non-negative) remainder
+    public static int remainder(int a, int b) {
+        if (b < 0) {
+            return remainder(a, -b);
+        }
+        if (a < 0) {
+            return remainder(-a, b);
+        }
+        while (a >= b) {
+            a = a - b;
+        }
+        return a;
+    }
+
+    // Euclid’s algorithm with a rem function
     public static int gcdRem(int a, int b) {
         while (a != 0 && b != 0) {
             if (Math.abs(a) > Math.abs(b)) {
-                a = Math.abs(a % b);
+                a = remainder(a, b);
             }
             else {
-                b = Math.abs(b % a);
+                b = remainder(b, a);
             }
         }
         return a | b;

@@ -17,7 +17,7 @@ public class Main {
 
         BufferedReader bufferedReader = new BufferedReader(reader);
 
-        String currentLine = "";
+        String currentLine;
 
         while ((currentLine = bufferedReader.readLine()) != null) {
             for (int i = 0; i < currentLine.length(); ++i) {
@@ -26,6 +26,8 @@ public class Main {
                 }
             }
         }
+
+        bufferedReader.close();
 
         return count;
     }

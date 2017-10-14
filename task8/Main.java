@@ -13,7 +13,7 @@ public class Main {
 
         final MyRandom random = new MyRandom(25214903917L, 11L, l2pow48);
 
-        Stream<Long> stream = Stream.iterate(234L, xi -> random.getNext(xi)).skip(1).limit(10);
+        Stream<Long> stream = Stream.iterate(234L, random::getNext).skip(1).limit(10);
 
         stream.forEach(System.out::println);
     }
