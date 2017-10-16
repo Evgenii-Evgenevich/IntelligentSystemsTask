@@ -18,10 +18,10 @@ public class StreamOfLinesScanner {
     }
 
     private Supplier<String> supplier = () -> {
-        return this.scanner.nextLine();
+        return this.scanner.hasNextLine() ? this.scanner.nextLine() : null;
     };
 
     public Stream<String> stream() {
-        return Stream.generate(this.supplier);
+        return Stream.generate(this.supplier).filter(string -> string != null);
     }
 }

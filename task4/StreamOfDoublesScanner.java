@@ -18,7 +18,16 @@ public class StreamOfDoublesScanner {
     }
 
     private DoubleSupplier supplier = () -> {
-        return this.scanner.nextDouble();
+        while (!this.scanner.hasNextDouble() && this.scanner.hasNext()) {
+            this.scanner.next();
+        }
+
+        if (this.scanner.hasNextDouble()) {
+            return this.scanner.nextDouble();
+        }
+        else {
+            return 0d;
+        }
     };
 
     public DoubleStream stream() {

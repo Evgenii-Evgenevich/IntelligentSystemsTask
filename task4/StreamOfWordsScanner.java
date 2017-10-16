@@ -23,8 +23,13 @@ public class StreamOfWordsScanner {
     }
 
     private Supplier<String> supplier = () -> {
-        while (currentLine.length() == 0) {
-            this.currentLine = this.scanner.nextLine();
+        while (this.currentLine.length() == 0) {
+            if (this.scanner.hasNext()) {
+                this.currentLine = this.scanner.next();
+            }
+            else {
+                return null;
+            }
         }
 
         // find word
@@ -46,6 +51,6 @@ public class StreamOfWordsScanner {
     };
 
     public Stream<String> stream() {
-        return Stream.generate(this.supplier);
+        return Stream.generate(this.supplier).filter(string -> string != null);
     }
 }

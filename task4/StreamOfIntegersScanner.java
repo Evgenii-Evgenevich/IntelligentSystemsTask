@@ -18,7 +18,16 @@ public class StreamOfIntegersScanner {
     }
 
     private IntSupplier supplier = () -> {
-        return this.scanner.nextInt();
+        while (!this.scanner.hasNextInt() && this.scanner.hasNext()) {
+            this.scanner.next();
+        }
+
+        if (this.scanner.hasNextInt()) {
+            return this.scanner.nextInt();
+        }
+        else {
+            return 0;
+        }
     };
 
     public IntStream stream() {
