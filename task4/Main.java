@@ -90,7 +90,7 @@ public class Main {
         }
 
         // test StreamOfWordsScanner
-        if (true)
+        if (false)
         {
             streamOfWordsScanner = new StreamOfWordsScanner(System.in);
             Stream<String> stream = streamOfWordsScanner.stream();
