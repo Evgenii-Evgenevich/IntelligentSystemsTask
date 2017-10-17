@@ -17,15 +17,15 @@ public class Main {
 
             if (c >= 'a' && c <= 'f') {
                 decimal <<= 4;
-                decimal += c - 'a' + 10;
+                decimal |= c - 'a' + 10;
             }
             else if (c >= 'A' && c <= 'F') {
                 decimal <<= 4;
-                decimal += c - 'A' + 10;
+                decimal |= c - 'A' + 10;
             }
             else if (c >= '1' && c <= '9') {
                 decimal <<= 4;
-                decimal += c - '0';
+                decimal |= c - '0';
             }
             else if (c == '0') {
                 decimal <<= 4;
@@ -46,5 +46,7 @@ public class Main {
         String hexadecimal = scanner.nextLine();
 
         System.out.println("decimal:     \t" + hexadecimalToDecimal(hexadecimal));
+
+        // System.out.println("decimal:     \t" + Long.decode("0x" + hexadecimal));
     }
 }

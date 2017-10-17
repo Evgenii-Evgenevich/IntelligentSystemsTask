@@ -4,11 +4,60 @@
 
 package task4;
 
+import java.util.PrimitiveIterator;
+import java.util.Scanner;
+import java.util.Spliterator;
+import java.util.Spliterators;
 import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
+import java.util.stream.StreamSupport;
 
 public class Main {
+
+    DoubleStream doubleStreamScanner(Scanner scanner) {
+        PrimitiveIterator.OfDouble iterator = new PrimitiveIterator.OfDouble() {
+            @Override
+            public double nextDouble() {
+                return scanner.nextDouble();
+            }
+
+            @Override
+            public boolean hasNext() {
+                while (!scanner.hasNextDouble() && scanner.hasNext()) {
+                    scanner.next();
+                }
+
+                return scanner.hasNextDouble();
+            }
+        };
+
+        return StreamSupport.doubleStream(
+                Spliterators.spliteratorUnknownSize(iterator, Spliterator.ORDERED | Spliterator.NONNULL),
+                false);
+    }
+
+    IntStream integerStreamScanner(Scanner scanner) {
+        PrimitiveIterator.OfInt iterator = new PrimitiveIterator.OfInt() {
+            @Override
+            public int nextInt() {
+                return scanner.nextInt();
+            }
+
+            @Override
+            public boolean hasNext() {
+                while (!scanner.hasNextInt() && scanner.hasNext()) {
+                    scanner.next();
+                }
+
+                return scanner.hasNextInt();
+            }
+        };
+
+        return StreamSupport.intStream(
+                Spliterators.spliteratorUnknownSize(iterator, Spliterator.ORDERED | Spliterator.NONNULL),
+                false);
+    }
 
     public static void main(String[] args) {
         StreamOfDoublesScanner streamOfDoublesScanner = null;
