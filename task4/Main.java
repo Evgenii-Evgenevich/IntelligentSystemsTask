@@ -77,7 +77,7 @@ public class Main {
         if (false)
         {
             streamOfIntegersScanner = new StreamOfIntegersScanner(System.in);
-            IntStream stream = streamOfIntegersScanner.stream();;
+            IntStream stream = streamOfIntegersScanner.stream();
             stream.limit(5).forEach(System.out::println);
         }
 
@@ -85,7 +85,7 @@ public class Main {
         if (false)
         {
             streamOfLinesScanner = new StreamOfLinesScanner(System.in);
-            Stream<String> stream = streamOfLinesScanner.stream();;
+            Stream<String> stream = streamOfLinesScanner.stream();
             stream.limit(5).forEach(System.out::println);
         }
 
@@ -93,7 +93,7 @@ public class Main {
         if (true)
         {
             streamOfWordsScanner = new StreamOfWordsScanner(System.in);
-            Stream<String> stream = streamOfWordsScanner.stream();;
+            Stream<String> stream = streamOfWordsScanner.stream();
             stream.limit(5).forEach(System.out::println);
         }
     }
