@@ -13,18 +13,25 @@ public class Main {
         long decimal = 0;
 
         for (int i = 0; i < hexadecimal.length(); ++i) {
-            decimal *= 16;
-
             char c = hexadecimal.charAt(i);
 
             if (c >= 'a' && c <= 'f') {
+                decimal <<= 4;
                 decimal += c - 'a' + 10;
             }
             else if (c >= 'A' && c <= 'F') {
+                decimal <<= 4;
                 decimal += c - 'A' + 10;
             }
             else if (c >= '1' && c <= '9') {
+                decimal <<= 4;
                 decimal += c - '0';
+            }
+            else if (c == '0') {
+                decimal <<= 4;
+            }
+            else {
+                break;
             }
         }
 
@@ -38,8 +45,6 @@ public class Main {
 
         String hexadecimal = scanner.nextLine();
 
-        System.out.print("decimal:     \t" + hexadecimalToDecimal(hexadecimal));
-
-        System.out.print("decimal:     \t" + Long.decode("0x" + hexadecimal));
+        System.out.println("decimal:     \t" + hexadecimalToDecimal(hexadecimal));
     }
 }
